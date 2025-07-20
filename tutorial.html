@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSL - Tutorial | Red Shadow Link</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f0f;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(238, 69, 64, 0.3);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ee4540, #ff6b6b);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        h1 {
+            color: #ee4540;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 18px;
+        }
+        
+        .section {
+            background: rgba(30, 30, 30, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .section h2 {
+            color: #ee4540;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        .section h3 {
+            color: #ffffff;
+            margin: 20px 0 12px;
+            font-size: 18px;
+        }
+        
+        .step {
+            margin-bottom: 16px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid #ee4540;
+            border-radius: 8px;
+        }
+        
+        .step strong {
+            color: #ee4540;
+        }
+        
+        .credentials {
+            background: rgba(238, 69, 64, 0.1);
+            border: 1px solid rgba(238, 69, 64, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ee4540;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #ee4540;
+        }
+        
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            color: #ffc107;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning strong {
+            color: #ffc107;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ee4540, #ff6b6b);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(238, 69, 64, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">🔍</div>
+                <div>
+                    <div style="font-size: 18px; font-weight: 700; color: #ee4540;">SCARLET RED</div>
+                    <div style="font-size: 10px; color: #999; letter-spacing: 2px;">SOLUTIONS</div>
+                </div>
+            </div>
+            <h1>Tutorial do Sistema RSL</h1>
+            <p class="subtitle">Guia completo para navegação na versão demo</p>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ IMPORTANTE:</strong> Esta é uma versão de demonstração com funcionalidades simuladas. Todos os dados são fictícios e criados apenas para fins de apresentação.
+        </div>
+
+        <div class="section">
+            <h2>🚀 Como Começar</h2>
+            
+            <div class="step">
+                <strong>1. Acesso ao Sistema:</strong> Na tela de login, utilize as credenciais de demonstração fornecidas abaixo.
+            </div>
+            
+            <div class="credentials">
+                <strong>Credenciais de Acesso:</strong><br>
+                <strong>Usuário:</strong> <code>admin</code><br>
+                <strong>Senha:</strong> <code>demo123</code>
+            </div>
+            
+            <div class="step">
+                <strong>2. Dashboard Principal:</strong> Após o login, você será direcionado para o dashboard com visão geral do sistema.
+            </div>
+            
+            <div class="step">
+                <strong>3. Navegação:</strong> Use o menu lateral esquerdo para navegar entre as diferentes seções do sistema.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Funcionalidades Disponíveis</h2>
+            
+            <h3>✅ Seções Implementadas:</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>Dashboard</strong><br>
+                    Visão geral com estatísticas e casos recentes
+                </div>
+                <div class="feature-item">
+                    <strong>Caso Investigativo</strong><br>
+                    Detalhes completos do caso Sandra Pereira
+                </div>
+                <div class="feature-item">
+                    <strong>Reconhecimento Facial</strong><br>
+                    Interface de upload e análise facial
+                </div>
+                <div class="feature-item">
+                    <strong>Navegação</strong><br>
+                    Menu lateral com todas as seções
+                </div>
+            </div>
+            
+            <h3>🔄 Funcionalidades Simuladas:</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>Upload de Imagens</strong><br>
+                    Simula processamento de arquivos
+                </div>
+                <div class="feature-item">
+                    <strong>Reconhecimento</strong><br>
+                    Valores de probabilidade pré-programados
+                </div>
+                <div class="feature-item">
+                    <strong>Localização</strong><br>
+                    Dados de geolocalização fictícios
+                </div>
+                <div class="feature-item">
+                    <strong>Tempo Real</strong><br>
+                    Simulação de atualizações automáticas
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Fluxo de Navegação Recomendado</h2>
+            
+            <div class="step">
+                <strong>Passo 1:</strong> Faça login com as credenciais fornecidas
+            </div>
+            
+            <div class="step">
+                <strong>Passo 2:</strong> Explore o Dashboard para visão geral do sistema
+            </div>
+            
+            <div class="step">
+                <strong>Passo 3:</strong> Clique em "Sandra Pereira" para ver o caso investigativo
+            </div>
+            
+            <div class="step">
+                <strong>Passo 4:</strong> Navigate para "Facial Recognition" no menu lateral
+            </div>
+            
+            <div class="step">
+                <strong>Passo 5:</strong> Teste as funcionalidades de upload e processamento
+            </div>
+            
+            <div class="step">
+                <strong>Passo 6:</strong> Explore as diferentes seções através do menu lateral
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎮 Elementos Interativos</h2>
+            
+            <h3>Botões e Ações:</h3>
+            <div class="step">• <strong>Upload Image:</strong> Simula upload e processamento de imagem</div>
+            <div class="step">• <strong>Capture Camera:</strong> Simula captura via câmera</div>
+            <div class="step">• <strong>Process:</strong> Inicia simulação de processamento</div>
+            <div class="step">• <strong>Download:</strong> Simula download de relatórios</div>
+            <div class="step">• <strong>Export PDF/JSON:</strong> Simula exportação de dados</div>
+            
+            <h3>Animações e Feedback:</h3>
+            <div class="step">• Estados de carregamento com spinners animados</div>
+            <div class="step">• Transições suaves entre páginas</div>
+            <div class="step">• Feedback visual para todas as ações</div>
+            <div class="step">• Atualizações em tempo real simuladas</div>
+        </div>
+
+        <div class="section">
+            <h2>⚡ Atalhos de Teclado</h2>
+            
+            <div class="step"><code>Ctrl + K</code> - Abrir busca</div>
+            <div class="step"><code>Ctrl + D</code> - Download (na página de reconhecimento)</div>
+            <div class="step"><code>Ctrl + B</code> - Voltar ao dashboard</div>
+        </div>
+
+        <div class="section">
+            <h2>📱 Responsividade</h2>
+            
+            <div class="step">
+                <strong>Desktop:</strong> Experiência completa com sidebar e todas as funcionalidades
+            </div>
+            
+            <div class="step">
+                <strong>Tablet:</strong> Adaptação dos layouts com reorganização dos elementos
+            </div>
+            
+            <div class="step">
+                <strong>Mobile:</strong> Interface otimizada para dispositivos móveis
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔧 Próximos Passos</h2>
+            
+            <p>Esta demonstração mostra as capacidades visuais e de interface do sistema. Para uma implementação completa, seria necessário:</p>
+            
+            <div class="step">• Backend com APIs reais de reconhecimento facial</div>
+            <div class="step">• Banco de dados para armazenamento de casos</div>
+            <div class="step">• Integração com sistemas de geolocalização</div>
+            <div class="step">• Sistema de autenticação e autorização robusto</div>
+            <div class="step">• Processamento real de imagens e documentos</div>
+        </div>
+
+        <a href="index.html" class="back-btn">← Voltar ao Sistema</a>
+    </div>
+</body>
+</html>

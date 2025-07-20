@@ -1,0 +1,16 @@
+/* Placeholder para imagens - este arquivo será substituído por imagens reais */
+
+/* Para criar imagens placeholder, você pode usar serviços como:
+   - https://via.placeholder.com/
+   - https://picsum.photos/
+   - https://avatars.dicebear.com/
+   
+   Ou criar suas próprias imagens com as seguintes especificações:
+
+   sandra-profile.jpg - 80x80px - Foto do perfil da Sandra
+   sandra-recognition.jpg - 120x120px - Foto para reconhecimento facial  
+   maria-profile.jpg - 200x200px - Foto do perfil da Maria
+   maria-full.jpg - 200x200px - Foto completa da Maria
+
+   As imagens devem ser colocadas na pasta assets/images/
+*/

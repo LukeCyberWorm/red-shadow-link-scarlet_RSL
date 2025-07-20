@@ -1,0 +1,22 @@
+{
+  "name": "rsl-demo",
+  "version": "1.0.0",
+  "description": "Red Shadow Link - Scarlet Demo System",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -c-1",
+    "dev": "http-server -p 8000 -c-1 -o",
+    "serve": "python -m http.server 8000"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": [
+    "demo",
+    "investigation",
+    "facial-recognition",
+    "dashboard"
+  ],
+  "author": "Scarlet Red Solutions",
+  "license": "Proprietary"
+}

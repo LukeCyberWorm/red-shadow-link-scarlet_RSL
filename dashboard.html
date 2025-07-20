@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSL - Dashboard | Red Shadow Link</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-primary">SCARLET RED</span>
+                        <span class="brand-secondary">SOLUTIONS</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z" fill="currentColor"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="cases.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="currentColor"/>
+                    </svg>
+                    <span>Cases</span>
+                </a>
+
+                <a href="location.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="currentColor"/>
+                    </svg>
+                    <span>Location</span>
+                </a>
+
+                <a href="facial-recognition.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 11H7V9H9V11ZM13 11H11V9H13V11ZM15 11H17V9H15V11ZM12 2C13.1 2 14 2.9 14 4S13.1 6 12 6S10 5.1 10 4S10.9 2 12 2ZM21 9V7L19 5V4C19 2.9 18.1 2 17 2S15 2.9 15 4V5L13 7V9C13 10.1 13.9 11 15 11S17 10.1 17 11V9H21Z" fill="currentColor"/>
+                    </svg>
+                    <span>Facial Recognition</span>
+                </a>
+
+                <a href="dossier.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M14 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V8L14 2ZM18 20H6V4H13V9H18V20Z" fill="currentColor"/>
+                    </svg>
+                    <span>Dossier</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M17 7L15.59 8.41L18.17 11H8V13H18.17L15.59 15.59L17 17L22 12L17 7ZM4 5H12V3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H12V19H4V5Z" fill="currentColor"/>
+                    </svg>
+                    Sair
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-content">
+                    <div class="page-title">
+                        <h1>Investigative Case</h1>
+                        <p>Painel de controle e monitoramento</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="search-btn">Search</button>
+                        <div class="user-menu">
+                            <div class="user-avatar"></div>
+                            <span class="user-name">Admin User</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon cases"></div>
+                        <div class="stat-content">
+                            <h3>23</h3>
+                            <p>Casos Ativos</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon faces"></div>
+                        <div class="stat-content">
+                            <h3>156</h3>
+                            <p>Reconhecimentos</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon locations"></div>
+                        <div class="stat-content">
+                            <h3>89</h3>
+                            <p>Localizações</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon alerts"></div>
+                        <div class="stat-content">
+                            <h3>12</h3>
+                            <p>Alertas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Cases -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <h2>Casos Recentes</h2>
+                        <a href="cases.html" class="view-all-btn">Ver todos</a>
+                    </div>
+                    <div class="cases-list">
+                        <div class="case-item" onclick="viewCase('CASE-2024-04-23-SANDRA')">
+                            <div class="case-avatar">
+                                <img src="assets/images/sandra-profile.jpg" alt="Sandra Pereira" onerror="this.style.background='linear-gradient(135deg, #ee4540, #ff6b6b)'; this.innerHTML='SP'">
+                            </div>
+                            <div class="case-info">
+                                <h3>Sandra Pereira</h3>
+                                <p>sandra.pereira@example.com</p>
+                                <div class="case-meta">
+                                    <span class="case-id">CASE-2024-04-23-SANDRA</span>
+                                    <span class="case-status active">Ativo</span>
+                                </div>
+                            </div>
+                            <div class="case-stats">
+                                <div class="stat">
+                                    <span class="label">Probabilidade</span>
+                                    <span class="value">99,5%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">Última localização</span>
+                                    <span class="value">São Paulo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="case-item" onclick="viewCase('CASE-2024-04-15-MARIA')">
+                            <div class="case-avatar">
+                                <div style="background: linear-gradient(135deg, #6c5ce7, #a29bfe); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">MS</div>
+                            </div>
+                            <div class="case-info">
+                                <h3>Maria Silva</h3>
+                                <p>maria.silva@example.com</p>
+                                <div class="case-meta">
+                                    <span class="case-id">CASE-2024-04-15-MARIA</span>
+                                    <span class="case-status pending">Pendente</span>
+                                </div>
+                            </div>
+                            <div class="case-stats">
+                                <div class="stat">
+                                    <span class="label">Probabilidade</span>
+                                    <span class="value">92,0%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">Última localização</span>
+                                    <span class="value">Rio de Janeiro</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <h2>Atividade Recente</h2>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon facial-recognition"></div>
+                            <div class="activity-content">
+                                <p><strong>Reconhecimento facial</strong> realizado com 99,5% de precisão</p>
+                                <span class="activity-time">2 minutos atrás</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon location"></div>
+                            <div class="activity-content">
+                                <p><strong>Nova localização</strong> detectada em São Paulo</p>
+                                <span class="activity-time">15 minutos atrás</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon case"></div>
+                            <div class="activity-content">
+                                <p><strong>Caso atualizado</strong> - Novos documentos adicionados</p>
+                                <span class="activity-time">1 hora atrás</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSL - Red Shadow Link | Login</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-primary">SCARLET RED</span>
+                        <span class="brand-secondary">SOLUTIONS</span>
+                    </div>
+                </div>
+                <h1 class="system-title">Red Shadow Link</h1>
+                <p class="system-subtitle">Sistema de Investigação Avançada</p>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember">
+                        <span class="checkmark"></span>
+                        Lembrar de mim
+                    </label>
+                    <a href="#" class="forgot-password">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Acessar Sistema</span>
+                    <div class="btn-loading" style="display: none;">
+                        <div class="spinner"></div>
+                    </div>
+                </button>
+            </form>
+
+            <div class="demo-info">
+                <div class="demo-badge">DEMO</div>
+                <p>Esta é uma versão de demonstração do sistema RSL</p>
+                <div class="demo-credentials">
+                    <strong>Credenciais de teste:</strong><br>
+                    Usuário: <code>admin</code><br>
+                    Senha: <code>demo123</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-pattern"></div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

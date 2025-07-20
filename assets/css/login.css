@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+}
+
+.background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(238, 69, 64, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(238, 69, 64, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.login-card {
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(238, 69, 64, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    color: #ee4540;
+    background: linear-gradient(135deg, #ee4540, #ff6b6b);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.brand-primary {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ee4540;
+}
+
+.brand-secondary {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 2px;
+}
+
+.system-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.system-subtitle {
+    font-size: 16px;
+    color: #888;
+    font-weight: 400;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.input-group input {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ee4540;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(238, 69, 64, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #666;
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -8px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+    background: #ee4540;
+    border-color: #ee4540;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.forgot-password {
+    color: #ee4540;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ff6b6b;
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #ee4540, #ff6b6b);
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(238, 69, 64, 0.3);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.btn-text {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.btn-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.demo-info {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.demo-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ee4540;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.demo-info p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+.demo-credentials {
+    background: rgba(238, 69, 64, 0.1);
+    border: 1px solid rgba(238, 69, 64, 0.2);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+    color: #ccc;
+    text-align: left;
+}
+
+.demo-credentials code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ee4540;
+    font-family: 'Courier New', monospace;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+    
+    .system-title {
+        font-size: 24px;
+    }
+    
+    .logo-text {
+        align-items: center;
+    }
+}
