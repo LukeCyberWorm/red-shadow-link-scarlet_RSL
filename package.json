@@ -1,0 +1,39 @@
+{
+  "name": "red-shadow-link-scarlet",
+  "version": "1.0.0",
+  "description": "RSL - Sistema de Análise Investigativa com Wix Velo",
+  "main": "public/pages/index.html",
+  "scripts": {
+    "dev": "wix-cli dev",
+    "build": "wix-cli build",
+    "deploy": "wix-cli publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeCyberWorm/red-shadow-link-scarlet_RSL.git"
+  },
+  "keywords": [
+    "investigação",
+    "forense",
+    "IA",
+    "reconhecimento-facial",
+    "wix-velo"
+  ],
+  "author": "Luke CyberWorm <lucas.oliveira@scarletredsolutions.com>",
+  "license": "MIT",
+  "dependencies": {
+    "wix-data": "^1.0.0",
+    "wix-users": "^1.0.0",
+    "wix-location": "^1.0.0",
+    "wix-storage": "^1.0.0",
+    "wix-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "wix-cli": "^1.0.0"
+  },
+  "wixVelo": {
+    "runtime": "node16",
+    "environment": "production",
+    "domain": "scarletredsolutions.com"
+  }
+}

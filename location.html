@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalização - RSL Sistema | Scarlet Red Solutions</title>
+    <meta name="description" content="Sistema avançado de geolocalização e rastreamento - Mapas interativos, histórico de localização e análise de movimento.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://scarletredsolutions.com/location">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/location.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <span class="brand-name">SCARLET RED</span>
+                    <span class="brand-subtitle">SOLUTIONS</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="icon dashboard-icon"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cases.html" class="nav-link">
+                        <i class="icon cases-icon"></i>
+                        Cases
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="location.html" class="nav-link">
+                        <i class="icon location-icon"></i>
+                        Location
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="facial-recognition.html" class="nav-link">
+                        <i class="icon facial-icon"></i>
+                        Facial Recognition
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dossier.html" class="nav-link">
+                        <i class="icon dossier-icon"></i>
+                        Dossier
+                    </a>
+                </li>
+            </ul>
+
+            <div class="user-section">
+                <div class="user-info">
+                    <div class="user-avatar"></div>
+                    <div class="user-details">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Investigator</span>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Sair</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Location</h1>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search by IP address,device..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="location-content">
+                <!-- Filters Section -->
+                <div class="filters-section">
+                    <div class="time-filters">
+                        <button class="time-btn active" data-period="24h">Last 24 hours</button>
+                        <button class="time-btn" data-period="7d">Last 7 days</button>
+                    </div>
+                    
+                    <div class="filter-toggles">
+                        <label class="toggle-container">
+                            <input type="checkbox" id="torOrigin">
+                            <span class="toggle"></span>
+                            TOR origin
+                        </label>
+                        <label class="toggle-container">
+                            <input type="checkbox" id="vpnDetected">
+                            <span class="toggle"></span>
+                            VPN detected
+                        </label>
+                        <label class="toggle-container">
+                            <input type="checkbox" id="mobileDevice">
+                            <span class="toggle"></span>
+                            Mobile device
+                        </label>
+                    </div>
+                    
+                    <div class="confidence-filter">
+                        <span>CFP</span>
+                        <div class="confidence-toggle">
+                            <span class="toggle-option" data-confidence="high">●</span>
+                            <span class="toggle-option active" data-confidence="medium">●</span>
+                        </div>
+                        <span>Confidence</span>
+                    </div>
+                </div>
+
+                <!-- Map and History Section -->
+                <div class="map-history-section">
+                    <!-- Map Area -->
+                    <div class="map-container">
+                        <div class="map-header">
+                            <div class="map-controls">
+                                <button class="map-btn active">Map View</button>
+                                <button class="map-btn">Satellite</button>
+                            </div>
+                        </div>
+                        
+                        <div class="map-area">
+                            <div class="map-placeholder">
+                                <div class="map-background"></div>
+                                <div class="location-marker primary">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-label">São Paulo</div>
+                                </div>
+                                <div class="connection-line"></div>
+                                <div class="location-marker secondary" style="top: 60%; left: 45%;">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-label">Santos</div>
+                                </div>
+                                <div class="location-path">
+                                    <div class="path-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location History -->
+                    <div class="history-container">
+                        <div class="history-header">
+                            <h3>Location History</h3>
+                        </div>
+                        
+                        <div class="history-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Target</th>
+                                        <th>Date</th>
+                                        <th>Location</th>
+                                        <th>Confidence</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>João</td>
+                                        <td>2024-04-16</td>
+                                        <td>São Paulo,Brazil</td>
+                                        <td>
+                                            <span class="confidence-badge high">96 %</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn-small pdf-btn">PDF</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maria</td>
+                                        <td>2024-04-15</td>
+                                        <td>Rio de Janeiro, BJ</td>
+                                        <td>
+                                            <span class="confidence-badge high">91 %</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn-small pdf-btn">PDF</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/location.js"></script>
+</body>
+</html>

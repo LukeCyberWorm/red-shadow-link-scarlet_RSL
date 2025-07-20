@@ -1,0 +1,150 @@
+{
+  "site": {
+    "name": "Red Shadow Link - Scarlet",
+    "domain": "scarletredsolutions.com",
+    "description": "Sistema avançado de análise investigativa com IA",
+    "language": "pt-BR",
+    "charset": "UTF-8"
+  },
+  "seo": {
+    "title": "RSL - Sistema de Análise Investigativa",
+    "description": "Plataforma avançada para análise investigativa com reconhecimento facial, gestão de casos e rastreamento de localização. Tecnologia de ponta para investigações profissionais.",
+    "keywords": [
+      "análise investigativa",
+      "reconhecimento facial",
+      "gestão de casos",
+      "rastreamento",
+      "inteligência artificial",
+      "segurança",
+      "investigação",
+      "scarlet red solutions"
+    ],
+    "author": "Scarlet Red Solutions",
+    "robots": "index, follow",
+    "canonical": "https://scarletredsolutions.com/"
+  },
+  "pages": {
+    "index": {
+      "file": "index.html",
+      "url": "/",
+      "title": "RSL - Login | Sistema de Análise Investigativa",
+      "description": "Acesso ao sistema RSL - Red Shadow Link Scarlet. Login seguro para análise investigativa profissional.",
+      "type": "login"
+    },
+    "dashboard": {
+      "file": "dashboard.html", 
+      "url": "/dashboard",
+      "title": "Dashboard RSL | Painel Principal",
+      "description": "Painel principal do sistema RSL com visão geral de casos, estatísticas e ações rápidas.",
+      "type": "main",
+      "requiresAuth": true
+    },
+    "facial-recognition": {
+      "file": "facial-recognition.html",
+      "url": "/facial-recognition", 
+      "title": "Reconhecimento Facial | RSL AI",
+      "description": "Sistema avançado de reconhecimento facial com IA para identificação de suspeitos.",
+      "type": "feature",
+      "requiresAuth": true
+    },
+    "cases": {
+      "file": "cases.html",
+      "url": "/cases",
+      "title": "Gestão de Casos | RSL Sistema",
+      "description": "Gerenciamento completo de casos investigativos com perfis detalhados e documentação.",
+      "type": "feature", 
+      "requiresAuth": true
+    },
+    "location": {
+      "file": "location.html",
+      "url": "/location",
+      "title": "Rastreamento de Localização | RSL Tracking",
+      "description": "Sistema de rastreamento e mapeamento para análise de localização em investigações.",
+      "type": "feature",
+      "requiresAuth": true
+    }
+  },
+  "assets": {
+    "css": [
+      "styles/login.css",
+      "styles/dashboard.css", 
+      "styles/facial-recognition.css",
+      "styles/cases.css",
+      "styles/location.css"
+    ],
+    "js": [
+      "scripts/login.js",
+      "scripts/dashboard.js",
+      "scripts/facial-recognition.js", 
+      "scripts/cases.js",
+      "scripts/location.js"
+    ],
+    "fonts": [
+      "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    ],
+    "external": []
+  },
+  "wixSettings": {
+    "ssl": true,
+    "compression": true,
+    "caching": {
+      "enabled": true,
+      "duration": "1d"
+    },
+    "minification": {
+      "css": true,
+      "js": true,
+      "html": false
+    },
+    "analytics": {
+      "googleAnalytics": "G-XXXXXXXXXX",
+      "googleTagManager": "GTM-XXXXXXX"
+    },
+    "performance": {
+      "lazyLoading": true,
+      "imageOptimization": true,
+      "preloading": ["fonts", "critical-css"]
+    }
+  },
+  "security": {
+    "headers": {
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff",
+      "X-XSS-Protection": "1; mode=block",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    },
+    "authentication": {
+      "loginRequired": ["dashboard", "facial-recognition", "cases", "location"],
+      "sessionTimeout": 3600,
+      "maxLoginAttempts": 3
+    }
+  },
+  "backup": {
+    "files": [
+      "index.html",
+      "dashboard.html", 
+      "facial-recognition.html",
+      "cases.html",
+      "location.html",
+      "styles/",
+      "scripts/",
+      "sitemap.xml",
+      "robots.txt"
+    ],
+    "database": [],
+    "frequency": "daily"
+  },
+  "monitoring": {
+    "uptime": true,
+    "performance": true,
+    "errors": true,
+    "userActivity": true
+  },
+  "deployment": {
+    "environment": "production",
+    "version": "1.0.0",
+    "lastUpdate": "2024-01-15",
+    "deployedBy": "Scarlet Red Solutions",
+    "rollbackPlan": "backup-restore"
+  }
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconhecimento Facial - RSL Sistema | Scarlet Red Solutions</title>
+    <meta name="description" content="Sistema avançado de reconhecimento facial com IA - Upload de imagens, captura via webcam e análise com alta precisão.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://scarletredsolutions.com/facial-recognition">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/facial-recognition.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <span class="brand-name">SCARLET RED</span>
+                    <span class="brand-subtitle">SOLUTIONS</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="icon dashboard-icon"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cases.html" class="nav-link">
+                        <i class="icon cases-icon"></i>
+                        Cases
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="location.html" class="nav-link">
+                        <i class="icon location-icon"></i>
+                        Location
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="facial-recognition.html" class="nav-link">
+                        <i class="icon facial-icon"></i>
+                        Facial Recognition
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dossier.html" class="nav-link">
+                        <i class="icon dossier-icon"></i>
+                        Dossier
+                    </a>
+                </li>
+            </ul>
+
+            <div class="user-section">
+                <div class="user-info">
+                    <div class="user-avatar"></div>
+                    <div class="user-details">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Investigator</span>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Sair</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Facial Recognition</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="toggleCamera()">
+                        <span id="cameraBtn">Capture Camera</span>
+                    </button>
+                    <button class="btn btn-primary" onclick="uploadImage()">Upload Image</button>
+                </div>
+            </header>
+
+            <div class="facial-recognition-content">
+                <!-- Image Processing Section -->
+                <div class="processing-section">
+                    <div class="image-upload-area" id="imageUploadArea">
+                        <div class="upload-placeholder">
+                            <div class="upload-icon">📷</div>
+                            <h3>Upload ou Capture uma Imagem</h3>
+                            <p>Arraste uma imagem aqui ou clique para selecionar</p>
+                            <p class="file-info">Suporta JPG, PNG, WebP (max 10MB)</p>
+                        </div>
+                        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    </div>
+
+                    <div class="processing-controls">
+                        <div class="filter-section">
+                            <h4>Filtros de Busca</h4>
+                            <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label>Match Score</label>
+                                    <input type="range" id="matchScore" min="50" max="100" value="85">
+                                    <span class="filter-value" id="matchScoreValue">≥ 85</span>
+                                </div>
+                                <div class="filter-item">
+                                    <label>Período</label>
+                                    <select id="timePeriod">
+                                        <option value="7">Last 7 days</option>
+                                        <option value="30">Last 30 days</option>
+                                        <option value="90">Last 90 days</option>
+                                        <option value="all">All time</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label>Localização</label>
+                                    <select id="location">
+                                        <option value="any">Any</option>
+                                        <option value="sp">São Paulo</option>
+                                        <option value="rj">Rio de Janeiro</option>
+                                        <option value="mg">Minas Gerais</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary process-btn" id="processBtn" disabled>Process</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h2>Resultados da Busca</h2>
+                        <div class="results-stats">
+                            <span>4 matches encontrados</span>
+                        </div>
+                    </div>
+
+                    <!-- Match Results -->
+                    <div class="matches-grid">
+                        <div class="match-card" data-confidence="0.92">
+                            <div class="match-image">
+                                <div class="placeholder-face female"></div>
+                                <div class="confidence-badge">0,92</div>
+                            </div>
+                            <div class="match-info">
+                                <h4>Match encontrado</h4>
+                                <p class="confidence">92% de confiança</p>
+                            </div>
+                        </div>
+
+                        <div class="match-card" data-confidence="0.87">
+                            <div class="match-image">
+                                <div class="placeholder-face male"></div>
+                                <div class="confidence-badge">0,87</div>
+                            </div>
+                            <div class="match-info">
+                                <h4>Match encontrado</h4>
+                                <p class="confidence">87% de confiança</p>
+                            </div>
+                        </div>
+
+                        <div class="match-card" data-confidence="0.86">
+                            <div class="match-image">
+                                <div class="placeholder-face female"></div>
+                                <div class="confidence-badge">0,86</div>
+                            </div>
+                            <div class="match-info">
+                                <h4>Match encontrado</h4>
+                                <p class="confidence">86% de confiança</p>
+                            </div>
+                        </div>
+
+                        <div class="match-card" data-confidence="0.85">
+                            <div class="match-image">
+                                <div class="placeholder-face female"></div>
+                                <div class="confidence-badge">0,85</div>
+                            </div>
+                            <div class="match-info">
+                                <h4>Match encontrado</h4>
+                                <p class="confidence">85% de confiança</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Details Section -->
+                <div class="case-details-section" id="caseDetailsSection" style="display: none;">
+                    <div class="case-header">
+                        <button class="back-btn" onclick="goBack()">← Voltar</button>
+                        <div class="case-id">
+                            <h3>Maria Silva</h3>
+                            <p>123.456.788-00</p>
+                        </div>
+                    </div>
+
+                    <div class="case-content">
+                        <div class="profile-section">
+                            <div class="profile-image">
+                                <div class="placeholder-face female large"></div>
+                            </div>
+                            <div class="profile-info">
+                                <div class="info-row">
+                                    <span class="label">Last seen</span>
+                                    <span class="value">9:25</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Location</span>
+                                    <span class="value">São Paulo</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Confidence</span>
+                                    <span class="value">92 %</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="history-section">
+                            <h4>Location History</h4>
+                            <div class="history-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Target</th>
+                                            <th>Date</th>
+                                            <th>Location</th>
+                                            <th>Confidence</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>João</td>
+                                            <td>2025-04-15</td>
+                                            <td>São Paulo, Brazil</td>
+                                            <td>92 %</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maria</td>
+                                            <td>2024-04-15</td>
+                                            <td>Rio de Janeiro, BJ</td>
+                                            <td>91 %</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-outline">PDF</button>
+                            <button class="btn btn-outline">JSON</button>
+                            <button class="btn btn-secondary">Open Profile</button>
+                            <button class="btn btn-primary">Add to Case</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/facial-recognition.js"></script>
+</body>
+</html>

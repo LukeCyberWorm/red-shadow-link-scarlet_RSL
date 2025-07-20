@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <canvas id="faviconCanvas" width="32" height="32" style="display:none;"></canvas>
+    <script>
+        // Generate a simple favicon for Scarlet Red Solutions
+        const canvas = document.getElementById('faviconCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Background
+        ctx.fillStyle = '#ff4444';
+        ctx.fillRect(0, 0, 32, 32);
+        
+        // Inner circle
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(16, 16, 12, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Center dot
+        ctx.fillStyle = '#ff4444';
+        ctx.beginPath();
+        ctx.arc(16, 16, 6, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Convert to ICO format would require additional tools
+        console.log('Favicon concept created - use online converter to create .ico file');
+    </script>
+</body>
+</html>
