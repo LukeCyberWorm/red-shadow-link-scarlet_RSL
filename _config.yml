@@ -1,0 +1,67 @@
+# GitHub Pages Configuration for RSL - Red Shadow Link Scarlet
+title: "RSL - Red Shadow Link Scarlet"
+description: "Advanced Security Investigation System Demo"
+author: "LukeCyberWorm"
+email: "contact@rsl-scarlet.com"
+
+# GitHub Pages settings
+baseurl: "/red-shadow-link-scarlet_RSL" # O nome do seu repositório
+url: "https://lukecyberworm.github.io" # Seu username do GitHub
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files/folders from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .htaccess
+  - server.js
+  - package.json
+  - README.md
+
+# Collections and defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Custom variables
+rsl:
+  version: "2.1.0"
+  demo_credentials:
+    username: "admin"
+    password: "demo123"
+  features:
+    - "8 Complete Pages"
+    - "Multi-Terminal Kali Sandbox"
+    - "Advanced Security Tools"
+    - "Real-time Location Tracking"
+    - "Facial Recognition System"
+    - "Investigation Case Management"
+    - "Technical Dossier System"
+  
+# SEO settings
+lang: pt-BR
+locale: pt_BR
+
+# Social links
+social:
+  github: https://github.com/LukeCyberWorm
+  
+# Analytics (opcional)
+# google_analytics: UA-XXXXXXX-X
