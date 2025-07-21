@@ -13,6 +13,8 @@ RSL - Red Shadow Link Scarlet é um sistema completo de investigação e seguran
 ### 🔗 **Acesso ao Sistema**
 📱 **Demo Online:** [https://lukecyberworm.github.io/red-shadow-link-scarlet_RSL/](https://lukecyberworm.github.io/red-shadow-link-scarlet_RSL/)
 
+**Status:** 🟢 Online e Funcionando
+
 ### 🔐 **Credenciais de Demonstração**
 - **Usuário:** `admin`
 - **Senha:** `demo123`
