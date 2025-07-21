@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier - RSL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dossier.css">
+</head>
+<body>
+    <div class="dossier-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-primary">RED SHADOW LINK</span>
+                        <span class="brand-secondary">SCARLET</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                    Dashboard
+                </a>
+                
+                <a href="cases.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                    </svg>
+                    Cases
+                </a>
+                
+                <a href="investigative-case.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="m12 1 0 6m0 6 0 6"></path>
+                        <path d="m1 12 6 0m6 0 6 0"></path>
+                    </svg>
+                    Investigation
+                </a>
+                
+                <a href="location.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Location
+                </a>
+                
+                <a href="dossier.html" class="nav-item active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10,9 9,9 8,9"></polyline>
+                    </svg>
+                    Dossier
+                </a>
+                
+                <a href="tools.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                    Tools
+                </a>
+                
+                <a href="facial-recognition.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Facial Recognition
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <div class="page-title">
+                        <h1>Dossier</h1>
+                        <div class="case-selector">
+                            <select class="case-dropdown" id="caseSelector">
+                                <option value="CASE-2024-04-23-SANDRA">Case. CASE-2024-04-23-SANDRA</option>
+                                <option value="CASE-2024-04-22-MARIA">Case. CASE-2024-04-22-MARIA</option>
+                                <option value="CASE-2024-04-21-ANTONIO">Case. CASE-2024-04-21-ANTONIO</option>
+                            </select>
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="export-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Export
+                        </button>
+                        <button class="print-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 6,2 18,2 18,9"></polyline>
+                                <path d="M6,18 L4,18 C2.9,18 2,17.1 2,16 L2,10 C2,8.9 2.9,8 4,8 L20,8 C21.1,8 22,8.9 22,10 L22,16 C22,17.1 21.1,18 20,18 L18,18"></path>
+                                <rect x="6" y="14" width="12" height="8"></rect>
+                            </svg>
+                            Print
+                        </button>
+                        <div class="menu-btn">☰</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dossier Content -->
+            <div class="dossier-content">
+                <!-- Main Layout -->
+                <div class="dossier-layout">
+                    <!-- Left Column -->
+                    <div class="left-column">
+                        <!-- Technical Dossier Section -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2>Technical Dossier</h2>
+                            </div>
+                            
+                            <div class="dossier-info">
+                                <div class="info-row">
+                                    <div class="info-label">Date</div>
+                                    <div class="info-value">2024-04-23</div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="info-label">Target</div>
+                                    <div class="info-value">Sandra Pereira</div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="info-label">Email</div>
+                                    <div class="info-value">sandra.pereira@example.com</div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="info-label">CPF</div>
+                                    <div class="info-value">123.456.789-00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- General Analysis Section -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2>General Analysis</h2>
+                            </div>
+                            
+                            <div class="analysis-content">
+                                <div class="analysis-item">
+                                    <div class="bullet-point">•</div>
+                                    <div class="analysis-text">Geolocalização of IP 192.168.1.100 in, SP</div>
+                                </div>
+                                <div class="analysis-item">
+                                    <div class="bullet-point">•</div>
+                                    <div class="analysis-text">Dispositivo vinculado: Apple iPhone 12</div>
+                                </div>
+                                <div class="analysis-item">
+                                    <div class="bullet-point">•</div>
+                                    <div class="analysis-text">Facial match: 99,5% accuracy</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Associated Documents Section -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2>Associated Documents</h2>
+                            </div>
+                            
+                            <div class="documents-table">
+                                <div class="table-header">
+                                    <div class="table-cell">Type</div>
+                                    <div class="table-cell">Name</div>
+                                    <div class="table-cell">Date</div>
+                                    <div class="table-cell">Source</div>
+                                </div>
+                                
+                                <div class="table-body">
+                                    <div class="table-row">
+                                        <div class="table-cell">
+                                            <div class="file-type pdf">PDF</div>
+                                        </div>
+                                        <div class="table-cell">contrato.pdf</div>
+                                        <div class="table-cell">2024-20</div>
+                                        <div class="table-cell">prefeitura...</div>
+                                    </div>
+                                    
+                                    <div class="table-row">
+                                        <div class="table-cell">
+                                            <div class="file-type doc">DOC</div>
+                                        </div>
+                                        <div class="table-cell">declaração...</div>
+                                        <div class="table-cell">2024-21</div>
+                                        <div class="table-cell">jusbrasil...</div>
+                                    </div>
+                                    
+                                    <div class="table-row">
+                                        <div class="table-cell">
+                                            <div class="file-type ppt">PPT</div>
+                                        </div>
+                                        <div class="table-cell">atividade.ppt</div>
+                                        <div class="table-cell">2024-22</div>
+                                        <div class="table-cell">tribunal.re...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="right-column">
+                        <!-- Subject Profile -->
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <h2>Sandra Pereira</h2>
+                                <p class="profile-email">sandra.pereira@example.com</p>
+                            </div>
+                            
+                            <div class="profile-photo">
+                                <img src="assets/images/sandra-avatar.jpg" alt="Sandra Pereira" id="profileImage">
+                            </div>
+                            
+                            <div class="profile-status">
+                                <div class="status-item">
+                                    <span class="status-label">Last seen</span>
+                                    <span class="status-value">99,5 %</span>
+                                </div>
+                                <div class="status-location">São Vicente</div>
+                            </div>
+                            
+                            <div class="profile-actions">
+                                <button class="profile-btn primary">Open Profile</button>
+                                <button class="profile-btn secondary">Add</button>
+                            </div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="additional-info">
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="info-text">
+                                    <h3>Last Location</h3>
+                                    <p>São Vicente, SP</p>
+                                    <span class="info-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <div class="info-text">
+                                    <h3>Device</h3>
+                                    <p>iPhone 12 Pro</p>
+                                    <span class="info-time">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <div class="info-text">
+                                    <h3>Security Level</h3>
+                                    <p>High Confidence</p>
+                                    <span class="info-time">99.5% match</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/dossier.js"></script>
+</body>
+</html>

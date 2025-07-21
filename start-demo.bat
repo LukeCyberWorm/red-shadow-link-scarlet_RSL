@@ -7,6 +7,17 @@ echo.
 echo Iniciando servidor local...
 echo.
 
+REM Tenta usar o servidor Node.js customizado primeiro
+if exist server.js (
+    echo Usando servidor Node.js customizado...
+    echo Abra seu navegador em: http://localhost:8000
+    echo.
+    echo Pressione Ctrl+C para parar o servidor
+    echo.
+    node server.js
+    goto :end
+)
+
 REM Verifica se o Python está instalado
 python --version >nul 2>&1
 if %errorlevel% == 0 (
@@ -42,3 +53,5 @@ if %errorlevel% == 0 (
         pause
     )
 )
+
+:end

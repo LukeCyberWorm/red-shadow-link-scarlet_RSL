@@ -1,0 +1,686 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.dossier-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (reusing from other pages) */
+.sidebar {
+    width: 280px;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(238, 69, 64, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    color: #ee4540;
+    background: linear-gradient(135deg, #ee4540, #ff6b6b);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: white;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-primary {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ee4540;
+}
+
+.brand-secondary {
+    font-size: 10px;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(238, 69, 64, 0.1);
+    color: #ffffff;
+    border-left-color: rgba(238, 69, 64, 0.3);
+}
+
+.nav-item.active {
+    background: rgba(238, 69, 64, 0.15);
+    color: #ee4540;
+    border-left-color: #ee4540;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    min-height: 100vh;
+}
+
+.header {
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.page-title h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.case-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.case-dropdown {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 40px 10px 16px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    min-width: 280px;
+    transition: all 0.3s ease;
+}
+
+.case-dropdown:focus {
+    outline: none;
+    border-color: rgba(238, 69, 64, 0.5);
+    box-shadow: 0 0 20px rgba(238, 69, 64, 0.1);
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: #666;
+    pointer-events: none;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.export-btn,
+.print-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(238, 69, 64, 0.1);
+    border: 1px solid rgba(238, 69, 64, 0.3);
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #ee4540;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.export-btn svg,
+.print-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.export-btn:hover,
+.print-btn:hover {
+    background: rgba(238, 69, 64, 0.2);
+    transform: translateY(-2px);
+}
+
+.menu-btn {
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Dossier Content */
+.dossier-content {
+    padding: 30px;
+    max-width: 1600px;
+}
+
+.dossier-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Left Column */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section-card {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(238, 69, 64, 0.3);
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Technical Dossier */
+.dossier-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-size: 14px;
+    color: #888;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.info-value {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+/* General Analysis */
+.analysis-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.analysis-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.bullet-point {
+    color: #ee4540;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2px;
+    min-width: 12px;
+}
+
+.analysis-text {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Documents Table */
+.documents-table {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px 120px;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(20, 20, 20, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px 120px;
+    gap: 16px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.table-row:hover {
+    background: rgba(238, 69, 64, 0.05);
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-cell {
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.file-type {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.file-type.pdf {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+.file-type.doc {
+    background: rgba(0, 123, 255, 0.2);
+    color: #007bff;
+}
+
+.file-type.ppt {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+/* Right Column */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Profile Card */
+.profile-card {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(238, 69, 64, 0.3);
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.profile-email {
+    font-size: 14px;
+    color: #888;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(238, 69, 64, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+    border-color: #ee4540;
+    box-shadow: 0 0 20px rgba(238, 69, 64, 0.3);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-status {
+    margin-bottom: 24px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.status-label {
+    font-size: 14px;
+    color: #888;
+}
+
+.status-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #28a745;
+}
+
+.status-location {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.profile-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+}
+
+.profile-btn.primary {
+    background: rgba(238, 69, 64, 0.1);
+    border: 1px solid rgba(238, 69, 64, 0.3);
+    color: #ee4540;
+}
+
+.profile-btn.secondary {
+    background: rgba(108, 92, 231, 0.1);
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    color: #6c5ce7;
+}
+
+.profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-btn.primary:hover {
+    background: rgba(238, 69, 64, 0.2);
+}
+
+.profile-btn.secondary:hover {
+    background: rgba(108, 92, 231, 0.2);
+}
+
+/* Additional Info */
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-card {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(238, 69, 64, 0.3);
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(238, 69, 64, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ee4540;
+    flex-shrink: 0;
+}
+
+.info-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.info-text p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 4px;
+}
+
+.info-time {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-card {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.section-card:nth-child(1) { animation-delay: 0.1s; }
+.section-card:nth-child(2) { animation-delay: 0.2s; }
+.section-card:nth-child(3) { animation-delay: 0.3s; }
+
+.profile-card {
+    animation: slideInUp 0.6s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.info-card {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.4s; }
+.info-card:nth-child(2) { animation-delay: 0.5s; }
+.info-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .dossier-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .right-column {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .dossier-content {
+        padding: 20px;
+    }
+    
+    .page-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .header-actions {
+        gap: 8px;
+    }
+    
+    .export-btn,
+    .print-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .case-dropdown {
+        min-width: 200px;
+        font-size: 12px;
+        padding: 8px 32px 8px 12px;
+    }
+    
+    .table-header,
+    .table-row {
+        grid-template-columns: 60px 1fr 60px;
+        gap: 12px;
+    }
+    
+    .table-cell:nth-child(4) {
+        display: none;
+    }
+    
+    .profile-actions {
+        flex-direction: column;
+    }
+}

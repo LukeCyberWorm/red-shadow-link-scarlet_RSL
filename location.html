@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Tracking - RSL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/location.css">
+</head>
+<body>
+    <div class="location-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-primary">RED SHADOW LINK</span>
+                        <span class="brand-secondary">SCARLET</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                    Dashboard
+                </a>
+                
+                <a href="cases.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                    </svg>
+                    Cases
+                </a>
+                
+                <a href="investigative-case.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="m12 1 0 6m0 6 0 6"></path>
+                        <path d="m1 12 6 0m6 0 6 0"></path>
+                    </svg>
+                    Investigation
+                </a>
+                
+                <a href="location.html" class="nav-item active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Location
+                </a>
+                
+                <a href="tools.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                    Tools
+                </a>
+                
+                <a href="facial-recognition.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Facial Recognition
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <div class="page-title">
+                        <h1>Location Tracking</h1>
+                    </div>
+                    <div class="header-actions">
+                        <button class="export-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Export Data
+                        </button>
+                        <div class="menu-btn">☰</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search by IP address,device..." id="locationSearch">
+                    </div>
+                </div>
+                
+                <!-- Filter Options -->
+                <div class="filter-options">
+                    <div class="time-filters">
+                        <label class="filter-item">
+                            <input type="radio" name="timeFilter" value="24h" checked>
+                            <span>Last 24 hours</span>
+                        </label>
+                        <label class="filter-item">
+                            <input type="radio" name="timeFilter" value="7d">
+                            <span>Last 7 days</span>
+                        </label>
+                        <label class="filter-item confidence-filter">
+                            <span>CFP</span>
+                            <input type="range" min="0" max="100" value="85" class="confidence-slider">
+                            <span>Confidence</span>
+                        </label>
+                    </div>
+                    
+                    <div class="detection-filters">
+                        <label class="toggle-filter">
+                            <input type="checkbox" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                            <span>TOR origin</span>
+                        </label>
+                        <label class="toggle-filter">
+                            <input type="checkbox" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                            <span>VPN detected</span>
+                        </label>
+                        <label class="toggle-filter">
+                            <input type="checkbox" class="toggle-input" checked>
+                            <span class="toggle-slider"></span>
+                            <span>Mobile device</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <div id="locationMap" class="location-map">
+                            <!-- Map will be rendered here -->
+                            <div class="map-placeholder">
+                                <div class="map-background">
+                                    <!-- São Paulo Region -->
+                                    <div class="location-marker active" data-location="sao-paulo" style="top: 60%; left: 45%;">
+                                        <div class="marker-pulse"></div>
+                                        <div class="marker-dot"></div>
+                                    </div>
+                                    <div class="location-label" style="top: 55%; left: 45%;">São Paulo</div>
+                                    
+                                    <!-- Connection lines -->
+                                    <div class="connection-line line-1"></div>
+                                    <div class="connection-line line-2"></div>
+                                    
+                                    <!-- Other cities -->
+                                    <div class="city-label" style="top: 25%; left: 35%;">Sorocaba</div>
+                                    <div class="city-label" style="top: 30%; left: 60%;">Jundiaí</div>
+                                    <div class="city-label" style="top: 45%; left: 25%;">Curzião</div>
+                                    <div class="city-label" style="top: 75%; left: 50%;">São Caetano</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location History Section -->
+            <div class="history-section">
+                <div class="section-header">
+                    <h2>Location History</h2>
+                    <div class="history-actions">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="high-confidence">High Confidence</button>
+                        <button class="filter-btn" data-filter="recent">Recent</button>
+                    </div>
+                </div>
+
+                <div class="history-table">
+                    <div class="table-header">
+                        <div class="table-cell">Target</div>
+                        <div class="table-cell">Date</div>
+                        <div class="table-cell">Location</div>
+                        <div class="table-cell">Confidence</div>
+                        <div class="table-cell">Actions</div>
+                    </div>
+                    
+                    <div class="table-body">
+                        <div class="table-row" data-confidence="96" data-date="2024-04-16">
+                            <div class="table-cell">
+                                <div class="target-info">
+                                    <div class="target-avatar">J</div>
+                                    <span>João</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">2024-04-16</div>
+                            <div class="table-cell">São Paulo, Brazil</div>
+                            <div class="table-cell">
+                                <div class="confidence-badge high">96 %</div>
+                            </div>
+                            <div class="table-cell">
+                                <button class="action-btn pdf-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14,2 14,8 20,8"></polyline>
+                                    </svg>
+                                    PDF
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row" data-confidence="91" data-date="2024-04-15">
+                            <div class="table-cell">
+                                <div class="target-info">
+                                    <div class="target-avatar">M</div>
+                                    <span>Maria</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">2024-04-15</div>
+                            <div class="table-cell">Rio de Janeiro, Brazil</div>
+                            <div class="table-cell">
+                                <div class="confidence-badge high">91 %</div>
+                            </div>
+                            <div class="table-cell">
+                                <button class="action-btn pdf-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14,2 14,8 20,8"></polyline>
+                                    </svg>
+                                    PDF
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row" data-confidence="87" data-date="2024-04-14">
+                            <div class="table-cell">
+                                <div class="target-info">
+                                    <div class="target-avatar">A</div>
+                                    <span>Antonio</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">2024-04-14</div>
+                            <div class="table-cell">Belo Horizonte, Brazil</div>
+                            <div class="table-cell">
+                                <div class="confidence-badge medium">87 %</div>
+                            </div>
+                            <div class="table-cell">
+                                <button class="action-btn pdf-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14,2 14,8 20,8"></polyline>
+                                    </svg>
+                                    PDF
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row" data-confidence="93" data-date="2024-04-13">
+                            <div class="table-cell">
+                                <div class="target-info">
+                                    <div class="target-avatar">S</div>
+                                    <span>Sandra</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">2024-04-13</div>
+                            <div class="table-cell">São Paulo, Brazil</div>
+                            <div class="table-cell">
+                                <div class="confidence-badge high">93 %</div>
+                            </div>
+                            <div class="table-cell">
+                                <button class="action-btn pdf-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14,2 14,8 20,8"></polyline>
+                                    </svg>
+                                    PDF
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row" data-confidence="76" data-date="2024-04-12">
+                            <div class="table-cell">
+                                <div class="target-info">
+                                    <div class="target-avatar">L</div>
+                                    <span>Lucas</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">2024-04-12</div>
+                            <div class="table-cell">Brasília, Brazil</div>
+                            <div class="table-cell">
+                                <div class="confidence-badge medium">76 %</div>
+                            </div>
+                            <div class="table-cell">
+                                <button class="action-btn pdf-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14,2 14,8 20,8"></polyline>
+                                    </svg>
+                                    PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/location.js"></script>
+</body>
+</html>
