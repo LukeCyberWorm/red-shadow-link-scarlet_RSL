@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lukecyberworm.github.io/red-shadow-link-scarlet_RSL/sitemap.xml
+
+# Disallow specific files
+Disallow: /server.js
+Disallow: /*.bat
+Disallow: /CNAME.example
+Disallow: /.github/
+
+# Allow all HTML files
+Allow: /*.html
+Allow: /assets/
+
+# RSL - Red Shadow Link Scarlet Demo System
+# This is a security demonstration system
+# All functionality is simulated for educational purposes

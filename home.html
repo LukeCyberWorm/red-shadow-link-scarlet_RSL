@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to RSL System...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .redirect-container {
+            text-align: center;
+        }
+        .logo {
+            color: #ee4540;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .loading {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(238, 69, 64, 0.3);
+            border-radius: 50%;
+            border-top-color: #ee4540;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .message {
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+    </style>
+    <script>
+        // Auto-redirect to login page
+        setTimeout(() => {
+            window.location.href = './index.html';
+        }, 2000);
+    </script>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo">RSL - Red Shadow Link Scarlet</div>
+        <div class="loading"></div>
+        <div class="message">Initializing security framework...</div>
+    </div>
+</body>
+</html>
